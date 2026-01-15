@@ -16,5 +16,7 @@ jobs:
         run: |
           git config --global user.name "GitHub CI"
           git config --global user.email "ci@github.com"
-          git remote add hf https://$HF_TOKEN@huggingface.co/spaces/Mihiraa/lang-tutor
-          git push hf main --force
+          git remote remove hf || true
+          git remote add hf https://huggingface.co/spaces/Mihiiraa/lang-tutor
+
+          git push https://Mihiiraa:$HF_TOKEN@huggingface.co/spaces/Mihiiraa/lang-tutor main --force
