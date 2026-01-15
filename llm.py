@@ -1,9 +1,10 @@
+
+import os 
 from openai import OpenAI, base_url
 from prompt import SYSTEM_PROMPT
 
-LLM_ENDPOINT = ""
-API_KEY = ""
-
+LLM_ENDPOINT = os.getenv("LLM_ENDPOINT")
+API_KEY = os.getenv("API_KEY")
 
 client = OpenAI(base_url=LLM_ENDPOINT, api_key=API_KEY)
 
